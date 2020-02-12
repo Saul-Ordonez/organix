@@ -1,6 +1,7 @@
 import React from "react";
 import './Schedule.css';
 import Daily from "./Daily";
+import { Link } from 'react-router-dom';
 
 
 const marketSchedule = [
@@ -45,6 +46,8 @@ const marketSchedule = [
 
 function Schedule() {
 return (
+  <div>
+  <Link to="/">Schedule</Link> | <Link to="/year">View Season Produce</Link>
   <div className="schedule">
   {marketSchedule.map((daily, index) =>
     <Daily day = {daily.day}
@@ -53,6 +56,7 @@ return (
     booth = {daily.booth}
     key = {index}/>
     )}
+  </div>
   </div>
 );
 }

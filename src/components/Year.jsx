@@ -1,6 +1,7 @@
 import React from "react";
 import Produce from './Produce';
 import './Year.css';
+import { Link } from 'react-router-dom';
 
 const availableProduce = [
   {
@@ -273,6 +274,8 @@ const availableProduce = [
 
 function Year() {
   return (
+    <div>
+    <Link to="/">Schedule</Link> | <Link to="/year">View Season Produce</Link>
     <div className='content'>
     {availableProduce.map((month, index) =>
       <Produce month = {month.month}
@@ -280,6 +283,7 @@ function Year() {
       key = {index}/>
     )}
 
+    </div>
     </div>
   );
 }
